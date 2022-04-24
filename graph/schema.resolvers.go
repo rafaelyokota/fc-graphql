@@ -6,21 +6,58 @@ package graph
 import (
 	"context"
 	"fmt"
+	"math/rand"
 
 	"github.com/rafaelyokota/fc-graphql/graph/generated"
 	"github.com/rafaelyokota/fc-graphql/graph/model"
 )
 
 func (r *mutationResolver) CreateCategory(ctx context.Context, input *model.NewCategory) (*model.Category, error) {
-	panic(fmt.Errorf("not implemented"))
+	category := model.Category{
+		ID:          fmt.Sprintf("T%d", rand.Intn(200)),
+		Name:        input.Name,
+		Description: &input.Description,
+	}
+	r.Categories = append(r.Categories, &category)
+	return &category, nil
 }
 
 func (r *mutationResolver) CreateCourse(ctx context.Context, input *model.NewCourse) (*model.Course, error) {
-	panic(fmt.Errorf("not implemented"))
+	var category *model.Category
+
+	for _, value := range r.Categories {
+		if value.ID == input.CategoryID {
+			category = value
+		}
+	}
+
+	course := model.Course{
+		ID:          fmt.Sprintf("T%d", rand.Intn(200)),
+		Name:        input.Name,
+		Description: &input.Description,
+		Category:    category,
+	}
+
+	r.Courses = append(r.Courses, &course)
+	return &course, nil
 }
 
 func (r *mutationResolver) CreateChapter(ctx context.Context, input *model.NewChapter) (*model.Chapter, error) {
-	panic(fmt.Errorf("not implemented"))
+	var course *model.Course
+	for _, value := range r.Courses {
+		if value.ID == input.CourseID {
+			course = value
+		}
+	}
+	chapter := &model.Chapter{
+		ID:     fmt.Sprintf("T%d", rand.Intn(200)),
+		Name:   &input.Name,
+		Course: course,
+	}
+
+	r.Chapters = append(r.Chapters, chapter)
+
+	return chapter, nil
 }
 
 func (r *queryResolver) Categories(ctx context.Context) ([]*model.Category, error) {
