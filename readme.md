@@ -28,7 +28,7 @@
             - Todos
 
     - gqlgen generate
-    
+
 
 ## Notas
     - Arquivo de resolver.go 
@@ -41,7 +41,7 @@
         - utilizar resolver.go (injeção de dependencias)
         - é o arquivo onde você implementa o "select"(ou utilizando repostory)  por exemplo
         - tem types de "mutation" e "query" que faze gerenciamento do Resolver
-    
+    - A separação da models, e criar o relacionamento "manualmente", somente vai existir o relacionamento quando necessario(sob demanda!), faz os relacionamento entre as models conforme precisa, se o cliente requisitar somente dados de uma model não tem porque deixar estar relacionado sempre com a outra model.
 # Referencias 
 
     - https://code.visualstudio.com/docs/remote/create-dev-container
