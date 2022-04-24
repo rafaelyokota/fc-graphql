@@ -22,7 +22,7 @@
     - go get github.com/99designs/gqlgen
     - go run github.com/99designs/gqlgen init //cria modelo de exemplo
     - alterar  schema.graphql 
-    - no arquivo graph/schema.resolvers.go
+    - no arquivo graph/schema.resolvers.go [https://www.howtographql.com/graphql-go/1-getting-started/]
         no final do arquivo deletar ou comentar linhas que conter os "metodos":
             - CreateTodo
             - Todos
@@ -46,3 +46,5 @@
     - https://code.visualstudio.com/docs/remote/create-dev-container
     - https://gqlgen.com/
     - https://github.com/99designs/gqlgen
+
+
