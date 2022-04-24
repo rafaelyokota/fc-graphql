@@ -27,7 +27,8 @@
             - CreateTodo
             - Todos
 
-    - go run github.com/99designs/gqlgen generate
+    - gqlgen generate
+    
 
 ## Notas
     - Arquivo de resolver.go 
