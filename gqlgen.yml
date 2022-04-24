@@ -44,12 +44,12 @@ autobind:
 # your liking
 models:
   Category:
-    model: github.com/rafaelyokota/fc-graphql/graph/model/Category
+    model: github.com/rafaelyokota/fc-graphql/graph/model.Category
   Course:
-    model: github.com/rafaelyokota/fc-graphql/graph/model/Course
+    model: github.com/rafaelyokota/fc-graphql/graph/model.Course
   Chapter:
-    model: github.com/rafaelyokota/fc-graphql/graph/model/Chapter
-    
+    model: github.com/rafaelyokota/fc-graphql/graph/model.Chapter
+
   ID:
     model:
       - github.com/99designs/gqlgen/graphql.ID
