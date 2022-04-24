@@ -46,6 +46,7 @@
         - Quando for implementar crie debugs, logs muito bom, pra poder auditar, e não entrar no problema no N+1
         - Leia sobre https://gqlgen.com/reference/dataloaders/
     - DataLoaders tenta otimizar essas querys N+1, cacheando alguns dados de relacionamento, otimizando algoritmo nessas situações
+    - Algo que vai ajudar é criar politicas para perfomance, limites de relacionamento, tempos de respotas...
     - Pesquisar sobre boas praticas,  para alinhar com a performance!
 # Referencias 
 
