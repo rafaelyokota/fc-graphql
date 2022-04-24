@@ -41,7 +41,11 @@
         - utilizar resolver.go (injeção de dependencias)
         - é o arquivo onde você implementa o "select"(ou utilizando repostory)  por exemplo
         - tem types de "mutation" e "query" que faze gerenciamento do Resolver
-    - A separação da models, e criar o relacionamento "manualmente", somente vai existir o relacionamento quando necessario(sob demanda!), faz os relacionamento entre as models conforme precisa, se o cliente requisitar somente dados de uma model não tem porque deixar estar relacionado sempre com a outra model.
+    -  A separação da models, e criar o relacionamento "manualmente", somente vai existir o relacionamento quando necessario(sob demanda!), faz os relacionamento entre as models conforme precisa, se o cliente requisitar somente dados de uma model não tem porque deixar estar relacionado sempre com a outra model.
+    - TOMAR MUITO CUIDADO relacionamentos N+1, para cada registro vai de um curso por exemplo vai relacionar toda vez que tiver outros cursos, ou em outras palavras para cada curso vai ter seu relacionamento, vai gerar efeito cascata(meio que loop infinito), degradando a performance.
+        - Quando for implementar crie debugs, logs muito bom, pra poder auditar, e não entrar no problema no N+1
+        - Leia sobre https://gqlgen.com/reference/dataloaders/
+    - DataLoaders tenta otimizar essas querys N+1, cacheando alguns dados de relacionamento, otimizando algoritmo nessas situações
     - Pesquisar sobre boas praticas,  para alinhar com a performance!
 # Referencias 
 
