@@ -1,0 +1,8 @@
+version: '3.9'
+
+services:
+  app:
+    container_name: go_grpc
+    build: .
+    volumes:
+      - ./:/src
